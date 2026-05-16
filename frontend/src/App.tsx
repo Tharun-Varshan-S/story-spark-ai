@@ -28,6 +28,7 @@ import { USER_ROLE } from "./constants/role";
 import PostListsComponent from "./components/dashboard/posts/post_lists.component";
 import ProfileComponent from "./components/dashboard/profile/profile.component";
 import TemplatesComponent from "./components/templates/templates.component";
+import CommunityComponent from "./components/community/community.component";
 
 const ProtectedRoute = ({
   element,
@@ -177,6 +178,14 @@ function App() {
         <Route path="/signup" element={<SignUpComponent />} />
         <Route path="/pricing" element={<PricingComponent />} />
         <Route path="/explore" element={<ExploreComponent />} />
+        <Route
+          path="/community"
+          element={
+            <RootLayout>
+              <CommunityComponent />
+            </RootLayout>
+          }
+        />
         <Route path="/post/:id" element={<PostDetailsComponent />} />
         <Route path="*" element={<NotFoundComponent />} />
       </Routes>

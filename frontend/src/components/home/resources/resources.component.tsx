@@ -24,7 +24,7 @@ const resources = [
     description:
       "Connect with fellow writers, share feedback, and grow together.",
     linkText: "Join now →",
-    link: "#",
+    link: "/community",
   },
 ];
 
@@ -46,14 +46,25 @@ const ResourceComponent = () => {
               <div className="text-4xl mb-4 text-indigo-700">
                 <i className={resource.icon}></i>
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-gray-400">{resource.title}</h3>
+              <h3 className="text-xl font-semibold mb-2 text-gray-400">
+                {resource.title}
+              </h3>
               <p className="text-gray-500 mb-4">{resource.description}</p>
-              <Link
-                to={resource.link}
-                className="text-indigo-500 hover:text-indigo-700 font-medium"
-              >
-                {resource.linkText}
-              </Link>
+              {resource.link.startsWith("/") ? (
+                <Link
+                  to={resource.link}
+                  className="text-indigo-500 hover:text-indigo-700 font-medium"
+                >
+                  {resource.linkText}
+                </Link>
+              ) : (
+                <a
+                  href={resource.link}
+                  className="text-indigo-500 hover:text-indigo-700 font-medium"
+                >
+                  {resource.linkText}
+                </a>
+              )}
             </div>
           ))}
         </div>

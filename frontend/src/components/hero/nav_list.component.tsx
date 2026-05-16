@@ -28,18 +28,24 @@ const NavListComponent: React.FC<INavListComponentProps> = ({
       <div className="flex items-center justify-between">
         <div className="flex items-center space-x-16">
           <div className="hidden md:flex items-center space-x-8">
-            <a href="/">
-               <img src={logo} alt="logo" width={50} height={50} />
-            </a>
-            <a href="/" className="text-gray-400 hover:text-custom transition">
+          <Link to="/">
+             <img src={logo} alt="logo" width={50} height={50} />
+          </Link>
+            <Link to="/" className="text-gray-400 hover:text-custom transition">
               HOME
-            </a>
-            <a
-              href="/explore"
+            </Link>
+            <Link
+              to="/explore"
               className="text-gray-400 hover:text-custom transition"
             >
               EXPLORE
-            </a>
+            </Link>
+            <Link
+              to="/community"
+              className="text-gray-400 hover:text-custom transition"
+            >
+              COMMUNITY
+            </Link>
             {/* <a
               href="/categories"
               className="text-gray-400 hover:text-custom transition"
@@ -47,12 +53,12 @@ const NavListComponent: React.FC<INavListComponentProps> = ({
               CATEGORIES
             </a> */}
             {isLogin && (
-              <a
-                href="/dashboard"
+              <Link
+                to="/dashboard"
                 className="text-gray-400 hover:text-custom transition"
               >
                 DASHBOARD
-              </a>
+              </Link>
             )}
           </div>
         </div>
