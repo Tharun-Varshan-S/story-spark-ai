@@ -5,9 +5,11 @@ export const getShortenedText = (
   wordLimit: number = 35
 ): string => {
   if (!content) return "";
+
   const words: string[] = content.split(" ");
+
   return words.length > wordLimit
-    ? words.slice(0, wordLimit).join(" ") + "..."
+    ? `${words.slice(0, wordLimit).join(" ")}...`
     : content;
 };
 
@@ -24,15 +26,11 @@ export const getRequestLimit = (subscriptionType: string) => {
 };
 
 export const doPublishAccessibility = (subscriptionType: string) => {
-  if (
+  return (
     subscriptionType === "free" ||
     subscriptionType === "pro" ||
     subscriptionType === "premium"
-  ) {
-    return true;
-  } else {
-    return false;
-  }
+  );
 };
 
 export interface ITopicData {
@@ -42,13 +40,21 @@ export interface ITopicData {
 }
 
 export const topicsData: ITopicData[] = [
-  { title: "#AIWriting", color: "bg-blue-100 text-blue-800", selected: true },
+  {
+    title: "#AIWriting",
+    color: "bg-blue-100 text-blue-800",
+    selected: true,
+  },
   {
     title: "#StoryGeneration",
     color: "bg-purple-100 text-purple-800",
     selected: true,
   },
-  { title: "#Writing", color: "bg-blue-100 text-blue-800", selected: false },
+  {
+    title: "#Writing",
+    color: "bg-cyan-100 text-cyan-800",
+    selected: false,
+  },
   {
     title: "#Creativity",
     color: "bg-green-100 text-green-800",
@@ -61,16 +67,21 @@ export const topicsData: ITopicData[] = [
   },
   {
     title: "#Storytelling",
-    color: "bg-purple-100 text-purple-800",
+    color: "bg-pink-100 text-pink-800",
     selected: false,
   },
-  { title: "#Productivity", color: "bg-red-100 text-red-800", selected: false },
+  {
+    title: "#Productivity",
+    color: "bg-red-100 text-red-800",
+    selected: false,
+  },
 ];
 
 export const getWordCount = (str: string) => {
   if (typeof str !== "string" || !str.trim()) {
     return 0;
   }
+
   return str
     .trim()
     .split(/\s+/)
@@ -105,7 +116,8 @@ export const prompts = [
   },
   {
     id: 6,
-    prompt: "Tell the story of a robot who desperately wants to become human.",
+    prompt:
+      "Tell the story of a robot who desperately wants to become human.",
   },
   {
     id: 7,
@@ -124,6 +136,7 @@ export const prompts = [
   },
   {
     id: 10,
-    prompt: "A time traveler finds themselves stuck in the age of dinosaurs.",
+    prompt:
+      "A time traveler finds themselves stuck in the age of dinosaurs.",
   },
 ];
