@@ -30,6 +30,7 @@ export interface IStories {
 
 interface IPost extends IStories {
   topic: ITopicData[];
+  isPublished?: boolean;
 }
 
 interface StoriesComponentProps {
@@ -268,6 +269,7 @@ const StoriesViewComponent: React.FC<StoriesComponentProps> = ({
       const post: IPost = {
         ...selectedStory,
         topic: selectTopics,
+        isPublished: false,
       };
 
       try {
@@ -645,6 +647,7 @@ ${content}
     const post: IPost = {
       ...selectedStory,
       topic: selectTopics,
+      isPublished: true,
     };
     setLoading(true);
     try {
