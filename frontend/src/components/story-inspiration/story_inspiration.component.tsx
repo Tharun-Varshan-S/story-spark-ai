@@ -56,7 +56,7 @@ const StoryInspirationComponent: React.FC = () => {
             Creative Writing Prompts
           </div>
           
-          <h1 className="text-5xl md:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white via-blue-100 to-indigo-300 mb-6 tracking-tight drop-shadow-2xl">
+          <h1 className="text-5xl md:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-bl from-[#4f46e5] via-[#4338ca] to-[#831843] mb-6 tracking-tight drop-shadow-2xl">
             Story Inspiration Hub
           </h1>
           
