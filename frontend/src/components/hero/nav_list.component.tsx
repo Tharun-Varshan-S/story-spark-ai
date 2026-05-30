@@ -1,4 +1,30 @@
-return (
+import React, { useState, useRef } from "react";
+import { Link, NavLink, useNavigate } from "react-router-dom";
+
+const ThemeToggle = () => <div />;
+const NotificationComponent = (props: any) => <div />;
+
+const NavListComponent = () => {
+  const navigate = useNavigate();
+  const notificationMenuRef = useRef(null);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  
+  const isLogin = false;
+  const isAdmin = false;
+  const unreadCount = 0;
+  const notifications: any[] = [];
+  const logo = "";
+
+  const getLinkClass = (isActive: boolean) => isActive ? "active" : "";
+  const getMobileLinkClass = (isActive: boolean) => isActive ? "active-mobile" : "";
+  const renderMobileNavContent = (title: string, isActive: boolean) => <span>{title}</span>;
+  const handelLogout = () => {};
+  const toggle = () => setIsOpen(!isOpen);
+  const close = () => setIsOpen(false);
+  const markAsRead = () => {};
+
+  return (
   <header className="sticky top-0 z-50 w-full bg-white/90 supports-[backdrop-filter]:bg-white/75 dark:bg-[#0B1120]/80 dark:supports-[backdrop-filter]:bg-[#0B1120]/70 backdrop-blur-md border-b border-slate-200/70 dark:border-white/10 transition-colors duration-300 transform-gpu">
     <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-3">
       <div className="flex items-center justify-between w-full gap-2">
@@ -236,4 +262,7 @@ return (
       )}
     </div>
   </header>
-);
+  );
+};
+
+export default NavListComponent;
